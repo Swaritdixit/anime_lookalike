@@ -27,10 +27,6 @@ def load_model():
 def load_face_detector():
     cascade_path = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
     detector = cv2.CascadeClassifier(cascade_path)
-
-    if detector.empty():
-        raise RuntimeError("Could not load the face detector.")
-
     return detector
 
 model, class_names = load_model()
