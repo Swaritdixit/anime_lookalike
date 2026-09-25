@@ -7,7 +7,7 @@ class AnimeDataset(Dataset):
     def __init__(self, root_dir):
         self.data = []
         self.labels = []
-        self.class_names = os.listdir(root_dir)
+        self.class_names = sorted(os.listdir(root_dir))
 
         for idx, name in enumerate(self.class_names):
             folder = os.path.join(root_dir, name)
