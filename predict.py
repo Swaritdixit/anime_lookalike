@@ -5,7 +5,7 @@ from dataset import AnimeDataset
 
 dataset = AnimeDataset("anime_faces")
 model = AnimeCNN(len(dataset.class_names))
-model.load_state_dict(torch.load("anime_model.pth"))
+model.load_state_dict(torch.load("anime_model.pth", map_location="cpu"))
 model.eval()
 
 img = cv2.imread("test.jpg")
